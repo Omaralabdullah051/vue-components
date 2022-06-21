@@ -1,26 +1,30 @@
 <template>
-  <!-- <Greet name="Bruce" hero-name="Batman"/>
-  <Greet name="Clark" hero-name="Superman"/>
-  <Greet name="Michell" hero-name="Ironman"/>
-  <Greet :name="name" :hero-name="heroName"/> -->
-
-  <Article id="my-article" title="Article Title" :likes="50" :isPublished="true" :object="{name:'batman'}"/>
+  <h3>AppComponent {{name}}</h3>
+  <ComponentC/>
 </template>
 
 <script>
-// import Greet from './components/Greet.vue';
-import Article from "./components/Article.vue";
+import ComponentC from "./components/ComponentC.vue";
 
 export default {
   name: 'App',
   components: {
-    // Greet,
-    Article,
+    ComponentC
   },
   data(){
     return {
-      name: 'Wrayne',
-      heroName: 'Spiderman'
+      name: 'Bruce'
+    }
+  },
+  //When we need to provide data without prop-drilling and cannot add it to the App component.
+  // provide: {
+  //   username: 'Bruce'
+  // }
+  //or
+  //When we need to provide data without prop-drilling and also can add it to the App component.
+  provide(){
+    return {
+      username: this.name
     }
   }
 }
