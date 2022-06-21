@@ -1,32 +1,21 @@
 <template>
-  <button @click="showPopupMethod">Show Popup</button>
-  <Popup v-show="showPopup" @close="closePopup"/>
-  <h2 v-if="name">Name -{{name}}</h2>
+  <Input v-model="name"/>
 </template>
 
 <script>
-import Popup from './components/Popup.vue';
-
+import Input from './components/Input.vue';
 export default {
   name: 'App',
   components: {
-    Popup
+   Input
   },
   data(){
     return {
-       showPopup: false,
-       name: '',
+      name: '',
     }
   },
   methods: {
-    showPopupMethod(){
-      this.showPopup = true;
-      this.name = '';
-    },
-    closePopup(name){
-      this.showPopup = false;
-      this.name = name
-    }
+    
   }
 }
 </script>
