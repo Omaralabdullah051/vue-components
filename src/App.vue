@@ -1,5 +1,8 @@
 <template>
-  <Greet/>
+  <Greet name="Bruce" hero-name="Batman"/>
+  <Greet name="Clark" hero-name="Superman"/>
+  <Greet name="Michell" hero-name="Ironman"/>
+  <Greet :name="name" :hero-name="heroName"/>
 </template>
 
 <script>
@@ -9,6 +12,12 @@ export default {
   name: 'App',
   components: {
     Greet
+  },
+  data(){
+    return {
+      name: 'Wrayne',
+      heroName: 'Spiderman'
+    }
   }
 }
 </script>

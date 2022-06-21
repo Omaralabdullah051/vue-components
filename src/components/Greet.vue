@@ -1,12 +1,13 @@
 <template>
     <h2>
-        Hello Users
+        Hello {{name}} | {{heroName}}
     </h2>
 </template>
 
 <script>
     export default {
-        name: 'GreetA'
+        name: 'GreetA',
+        props: ['name', 'heroName']
     }
 </script>
 
