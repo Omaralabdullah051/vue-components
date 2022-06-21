@@ -1,30 +1,31 @@
 <template>
-  <h3>AppComponent {{name}}</h3>
-  <ComponentC/>
+  <button @click="showPopupMethod">Show Popup</button>
+  <Popup v-show="showPopup" @close="closePopup"/>
+  <h2 v-if="name">Name -{{name}}</h2>
 </template>
 
 <script>
-import ComponentC from "./components/ComponentC.vue";
+import Popup from './components/Popup.vue';
 
 export default {
   name: 'App',
   components: {
-    ComponentC
+    Popup
   },
   data(){
     return {
-      name: 'Bruce'
+       showPopup: false,
+       name: '',
     }
   },
-  //When we need to provide data without prop-drilling and cannot add it to the App component.
-  // provide: {
-  //   username: 'Bruce'
-  // }
-  //or
-  //When we need to provide data without prop-drilling and also can add it to the App component.
-  provide(){
-    return {
-      username: this.name
+  methods: {
+    showPopupMethod(){
+      this.showPopup = true;
+      this.name = '';
+    },
+    closePopup(name){
+      this.showPopup = false;
+      this.name = name
     }
   }
 }
