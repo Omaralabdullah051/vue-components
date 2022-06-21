@@ -1,7 +1,7 @@
 <template>
     <div>
        <h2>Article Component</h2>
-       <h2>{{title}}</h2>
+       <h2 v-bind="$attrs">{{title}}</h2>
        <h2>Likes -{{likes}}</h2>
        <h2>Published -{{ isPublished ? 'Yes' : 'No' }}</h2>
        <h2>Name - {{object.name}}</h2>
@@ -22,7 +22,8 @@
             },
             isPublished: Boolean,
             object: Object
-        }
+        },
+        inheritAttrs: false
     }
 </script>
 

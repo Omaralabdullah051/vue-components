@@ -4,7 +4,7 @@
   <Greet name="Michell" hero-name="Ironman"/>
   <Greet :name="name" :hero-name="heroName"/> -->
 
-  <Article title="Article Title" :likes="50" :isPublished="true" :object="{name:'batman'}"/>
+  <Article id="my-article" title="Article Title" :likes="50" :isPublished="true" :object="{name:'batman'}"/>
 </template>
 
 <script>
